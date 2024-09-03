@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CRM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  </head>
+  <body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --Playfair: 'Playfair Display', serif;
+    --Quicksand: 'Quicksand', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+    --dark: #3c393d;
+    --exDark: #2b2b2b;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--Quicksand);
+
+}
+body{
+    line-height: 1.4;
+    color: var(--dark);
+
+}
+html {
+  scroll-behavior: smooth;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+}
+
+/* header */
+header{
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(banner-bg.jpg) center/cover no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+.navbar{
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1.2rem;
+}
+.navbar-brand{
+    color: #fff;
+    font-size: 2rem;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--Playfair);
+    letter-spacing: 1px;
+}
+.navbar-nav{
+    padding: 0.8rem 0 0.2rem 0;
+    text-align: center;
+}
+.navbar-nav a{
+    text-transform: uppercase;
+    font-family: var(--Roboto);
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.4rem 0.1rem;
+    letter-spacing: 3px;
+    transition: opacity 0.5s ease;
+}
+.navbar-nav a:hover{
+    opacity: 0.7;
+}
+.banner{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+.banner-title{
+    font-size: 3rem;
+    font-family: var(--Playfair);
+    line-height: 1.2;
+}
+.banner-title span{
+    font-family: var(--Playfair);
+    color: var(--exDark);
+}
+.banner p{
+    padding: 1rem 0 2rem 0;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-family: var(--Roboto);
+    font-weight: 300;
+    word-spacing: 2px;
+}
+.banner form{
+    background: #fff;
+    border-radius: 2rem;
+    padding: 0.6rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.search-input{
+    font-family: var(--Roboto);
+    font-size: 1.1rem;
+    width: 100%;
+    outline: 0;
+    padding: 0.6rem 0;
+    border: none;
+}
+.search-input::placeholder{
+    text-transform: capitalize;
+}
+.search-btn{
+    width: 40px;
+    font-size: 1.1rem;
+    color: var(--dark);
+    border: none;
+    background: transparent;
+    outline: 0;
+    cursor: pointer;
+}
+
+/* design */
+.design{
+    padding: 4.5rem 0;
+}
+.title{
+    text-align: center;
+    padding: 1rem 0;
+}
+.title h2{
+    font-family: var(--Playfair);
+    font-size: 2.4rem;
+}
+.title p{
+    text-transform: uppercase;
+    padding: 0.6rem 0;
+}
+.design-content{
+    margin: 2rem 0;
+}
+.design-item{
+    cursor: pointer;
+    margin: 1.5rem 0;
+}
+.design-img{
+    position: relative;
+    overflow: hidden;
+}
+.design-img::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+.design-img img{
+    transition:  all 0.5s ease;
+}
+.design-item:hover img{
+    transform: scale(1.2);
+}
+.design-img span:first-of-type{
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+    background: var(--exDark);
+    color: #fff;
+    padding: 0.25rem 1rem;
+}
+.design-img span:last-of-type{
+    position: absolute;
+    z-index: 1;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.design-title{
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+.design-title a{
+    color: var(--dark);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: var(--Playfair);
+}
+
+/* blog */
+.blog{
+    background: #f9f9f9;
+    padding: 4.5rem 0;
+}
+.blog-content{
+    margin: 2rem 0;
+}
+.blog-img{
+    position: relative;
+}
+.blog-img span{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--exDark);
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 0.3rem 0.6rem;
+}
+.blog-text{
+    margin: 2.2rem 0;
+    padding: 0 1rem;
+}
+.blog-text span{
+    font-weight: 300;
+    display: block;
+    padding-bottom: 0.5rem;
+}
+.blog-text h2{
+    font-family: var(--Playfair);
+    padding: 1rem 0;
+    font-size: 1.65rem;
+    font-weight: 500;
+}
+.blog-text p{
+    font-weight: 300;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    padding-bottom: 1.2rem;
+}
+.blog-text a{
+    font-family: var(--Roboto);
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: var(--dark);
+    display: inline-block;
+    background: var(--dark);
+    color: #fff;
+    padding: 0.55rem 1.2rem;
+    transition: all 0.5s ease;
+}
+.blog-text a:hover{
+    background: var(--exDark);
+}
+
+/* about */
+.about{
+    padding: 4.5rem 0;
+}
+.about-text{
+    margin: 2rem 0;
+}
+.about-text > p{
+    font-size: 1.1rem;
+    padding: 0.6rem 0;
+    opacity: 0.8;
+}
+
+/* footer */
+footer{
+    background: var(--exDark);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+.social-links{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.4rem;
+}
+.social-links a{
+    border: 2px solid #fff;
+    color: #fff;
+    display: block;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    margin: 0 0.3rem;
+    transition: all 0.5s ease;
+}
+
+.social-links a:hover{
+    background: #fff;
+    color: var(--exDark);
+}
+.footer span{
+    margin-top: 1rem;
+    display: block;
+    font-family: var(--Playfair);
+    letter-spacing: 2px;
+}
+
+/* Media Queries */
+@media screen and (min-width: 540px){
+    .navbar-nav a{
+        padding-right: 1.2rem;
+        padding-left: 1.2rem;
+    }
+    .banner-title{
+        font-size: 5rem;
+    }
+    .banner form{
+        margin-top: 1.4rem;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .navbar .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .search-input{
+        padding: 0.8rem 0;
+    }
+    .design-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .design-item{
+        margin: 0;
+    }
+    .blog-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .blog-content{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .about-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .design-content{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+    </style>
+    <!-- header -->
+    <header>
+      <nav class = "navbar">
+        <div class = "container">
+          <a href = "index.html" class = "navbar-brand">CRM</a>
+          <div class = "navbar-nav">
+            <a href = "#about">Home</a>
+            <a href = "about.html">About</a>
+            <a href = "#blog">Services</a>
+            <a href = "#design">Categories</a>
+            <a href = "customer.html">Help-Desk</a>
+          </div>
+        </div>
+      </nav>
+      <div class = "banner">
+        <div class = "container">
+          <h1 class = "banner-title">
+            <span>C</span>RM..
+          </h1>
+          <p>your own services tracker</p>
+         
+        </div>
+      </div>
+    </header>
+    <!-- end of header -->
+    
+    <!-- design -->
+    <section class = "design" id = "design">
+      <div class = "container">
+        <div class = "title">
+          <h2>Categories</h2>
+          <p>"Explore a world of possibilities with our diverse range of categories, tailored to suit every need!"
+          </p>
+        </div>
+
+        <div class = "design-content">
+          <!-- item -->
+          <div class = "design-item">
+            <div class = "design-img">
+              <img src = "images/art-design-1.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 123213</span>
+              <span>Content Writing</span>
+            </div>
+            <div class = "design-title">
+              <a href = "#">Crafting compelling content that builds trust, and converts readers into loyal customers.</a>
+            </div>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class = "design-item">
+            <div class = "design-img">
+              <img src = "images/art-design-2.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 75464</span>
+              <span>Video Editing</span>
+            </div>
+            <div class = "design-title">
+              <a href = "#">"Transforming raw footage into captivating stories that engage and inspire."              </a>
+            </div>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class = "design-item">
+            <div class = "design-img">
+              <img src = "images/art-design-3.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 1231435</span>
+              <span>Data Entry</span>
+            </div>
+            <div class = "design-title">
+              <a href = "#">Accurately entering data to ensure smooth operations and informed decision-making</a>
+            </div>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class = "design-item">
+            <div class = "design-img">
+              <img src = "images/art-design-4.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 7435423</span>
+              <span>Data Cleaning</span>
+            </div>
+            <div class = "design-title">
+              <a href = "#">"Refining data to eliminate errors, enhance accuracy, and unlock actionable insights</a>
+            </div>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class = "design-item">
+            <div class = "design-img">
+              <img src = "images/art-design-5.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 525325</span>
+              <span>Software Designing</span>
+            </div>
+            <div class = "design-title">
+              <a href = "#">Crafting intuitive and user-centered designs for seamless digital experiences.</a>
+            </div>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class = "design-item">
+            <div class = "design-img">
+              <img src = "images/art-design-6.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 96774</span>
+              <span>Web Development</span>
+            </div>
+            <div class = "design-title">
+              <a href = "#">Building dynamic,  websites that blend functionality with a flawless user experience.</a>
+            </div>
+          </div>
+          <!-- end of item -->
+        </div>
+      </div>
+    </section>
+    <!-- end of design -->
+
+
+    <!-- blog -->
+    <section class = "blog" id = "blog">
+      <div class = "container">
+        <div class = "title">
+          <h2>Your Journey With Us Starts Here..</h2>
+          <p>Explore Our Services</p>
+        </div>
+        <div class = "blog-content">
+          <!-- item -->
+          <div class = "blog-item">
+            <div class = "blog-img">
+              <img src = "images/blog-p-1.jpg" alt = "">
+              <span><i class = "far fa-heart"></i></span>
+            </div>
+            <div class = "blog-text">
+              <span>18 August, 2024</span>
+              <h2>Service Requester</h2>
+                <p>Requests Our Services Here</p>
+              <a href = "register.php">Get Started</a>
+            </div>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class = "blog-item">
+            <div class = "blog-img">
+              <img src = "images/blog-p-2.jpg" alt = "">
+              <span><i class = "far fa-heart"></i></span>
+            </div>
+            <div class = "blog-text">
+              <span>18 August, 2024</span>
+              <h2>Service Tracker</h2>
+                <p>Track Your Services Here</p>
+              <a href = "login3.php">Get Started</a>
+            </div>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class = "blog-item">
+            <div class = "blog-img">
+              <img src = "images/blog-p-3.jpg" alt = "">
+              <span><i class = "far fa-heart"></i></span>
+            </div>
+            <div class = "blog-text">
+              <span>18 August, 2024</span>
+              <h2>Admin Panel</h2>
+                <p>Admins Only</p>
+              <a href = "login.php">Get Started</a>
+            </div>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          
+          <!-- end of item -->
+        </div>
+      </div>
+    </section>
+    <!-- end of blog -->
+
+    <!-- about -->
+    <section class = "about" id = "about">
+      <div class = "container">
+        <div class = "about-content">
+          <div>
+            <img src = "images/about-bg.jpg" alt = "">
+          </div>
+          <div class = "about-text">
+            <div class = "title">
+              <h2>Dev Team</h2>
+              <p>Our Message</p>
+            </div>
+            <p>Welcome to our website! We're thrilled to have you here and can't wait to be a part of your journey. Consider us not just a service provider, but a family dedicated to supporting you every step of the way</p>
+            <p>We truly hope that we meet and exceed your expectations. Your satisfaction is our top priority, and we're committed to delivering an experience that leaves you delighted.</p>
+        </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of about -->
+
+    <!-- footer -->
+    <footer>
+      <div class = "social-links">
+        <a href = "#blog"><i class = "fab fa-github"></i></a>
+        <a href = "#blog"><i class = "fab fa-twitter"></i></a>
+        <a href = "#blog"><i class = "fab fa-instagram"></i></a>
+        <a href = "#blog"><i class = "fa fa-envelope"></i></a>
+      </div>
+      <span>CRM</span>
+    </footer>
+    <!-- end of footer -->
+    
+    
+  </body>
+</html>
